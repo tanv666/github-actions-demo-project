@@ -1,0 +1,11 @@
+name: GitHub Comment Trigger Test
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  verify-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm Trigger
+        run: echo "The GitHub event was successfully captured for comment: ${{ github.event.comment.body }}"
